@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/header.ejs %>
+</head>
+<body>
+
+<% include ../partials/searchbar.ejs %>
+
+<div id="container-results">
+    <div style="background:grey;text-align: center">Found <%= search.hits.total %> results in <%= search.took %> ms.</div>
+    <% search.hits.hits.forEach(function(r) { %>
+    <div class="searchresult" >
+        <b><a style="display:inline;margin-right:5px" href="<%= r._source.url %>"><%= r._source.name %></a><span>(<%= r._source.entityID%>)</span></b>
+        <p><%= r._source.desc %></p>
+    </div>
+    <% }); %>
+</div>
+<div id="secret">
+    <div>
+        <%= JSON.stringify(search) %>
+    </div>
+</div>
+</body>
+</html>
+
+<!--
+{ _index: 'serviceproviders',
+  _type: 'provider',
+  _id: '4605',
+  _score: 1,
+  _source:
+   { id: 4605,
+     entityID: 'https://filesender.asnet.am/simplesaml/module.php/saml/sp/metadata.php/default-sp',
+     name: 'Academic Scientific Research Computer Network of Armenia (ASNET-AM)',
+     url: null,
+     desc: 'FILESENDER.ASNET.AM is a secure way to share large files with anyone! Logon to upload your files or invite people to send you a file.' } }
+
+-->

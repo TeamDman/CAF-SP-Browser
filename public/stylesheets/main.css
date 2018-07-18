@@ -1,5 +1,5 @@
 #searchbox {
-    margin: auto;
+    margin: 25px auto;
     width: 50%;
     border: 3px solid white;
     border-radius: 5px;
@@ -13,11 +13,45 @@
 
 body {
     background-image: url("/background.png");
+    font-family:'open_sansregular', 'trebuchet ms', ariel, sans-serif;
 }
 
 #title {
+    display:block;
     color:white;
     font-size: 32px;
     width:50%;
     margin:auto;
+}
+
+#container-results {
+    margin: auto;
+    width: 50%;
+    background: white;
+}
+
+.searchresult {
+    /*height: 100px;*/
+    padding:5px;
+    text-overflow: ellipsis;
+    overflow:hidden;
+}
+.searchresult:nth-child(even) {
+    background:white;
+}
+.searchresult:nth-child(odd) {
+    background: lightgray;
+}
+
+#secret {
+    margin-top:25px;
+    padding:10px;
+    height:100px;
+}
+#secret div {
+    display:none;
+}
+#secret:hover div {
+    display:block;
+    background:white;
 }
