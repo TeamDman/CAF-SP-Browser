@@ -1,4 +1,4 @@
-var client = require('./es_client');
+const client = require('./es_client');
 
 client.indices.create({
     index: 'gov'

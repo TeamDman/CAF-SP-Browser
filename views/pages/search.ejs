@@ -11,7 +11,7 @@
     <div style="background:grey;text-align: center">Found <%= search.hits.total %> results in <%= search.took %> ms.</div>
     <% search.hits.hits.forEach(function(r) { %>
     <div class="searchresult" >
-        <b><a style="display:inline;margin-right:5px" href="<%= r._source.url %>"><%= r._source.name %></a><span>(<%= r._source.entityID%>)</span></b>
+        <b><a style="display:inline;margin-right:5px" href="<%= r._source.url %>"><%= r._source.name %></a><span>(<%= r._source.entityID %>)</span></b>
         <p><%= r._source.desc %></p>
     </div>
     <% }); %>
