@@ -1,23 +1,17 @@
-# Use an official Python runtime as a parent image
 FROM node:8
-# Set the working directory to /app
+
 WORKDIR /app
+COPY . /app
 
-# Copy the current directory contents into the container at /app
-ADD . /app
+RUN curl https://caf-shib2ops.ca/CoreServices/caf_interfed_signed.xml -o resources/caf_interfed_signed.xml
 
-# Install any needed packages specified in requirements.txt
 RUN npm install
 
-# Make port 80 available to the world outside this container
+RUN chmod +x /app/install.sh
+# ENTRYPOINT [ "app/install.sh"]
+
 EXPOSE 5000
 
-# Define environment variable
-ENV NAME World
-
-# Run app.py when the container launches
-CMD ["node", "scripts/db_populate"]
-
-CMD ["node", "scripts/es_populate"]
-
-CMD ["node", "scripts/server"]
+# RUN node scripts/db_populate
+# RUN node scripts/es_populate
+# CMD node scripts/server

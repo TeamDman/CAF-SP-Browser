@@ -2,7 +2,9 @@ const fs = require('fs');
 const xml2js = require('xml2js');
 const parser = new xml2js.Parser();
 const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('entities.db');
+const db = new sqlite3.Database('resources/entities.db');
+
+console.log('Populating entities database');
 
 fs.readFile('./resources/caf_interfed_signed.xml', function (err, data) {
   parser.parseString(data, function (err, result) {
