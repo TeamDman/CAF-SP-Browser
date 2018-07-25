@@ -27,7 +27,7 @@ services:
     #   timeout: 10s
     #   retries: 5
   web:
-    image: caf-sp-browser:latest #teamdman/caf-sp-browser:server
+    image: teamdman/caf-sp-browser:server
     ports:
       - "5000:5000"
     networks:
