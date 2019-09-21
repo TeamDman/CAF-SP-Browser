@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  backend:
+    image: backend
+    build: ./backend/
+    container_name: backend
+    ports:
+      - 4000:4000
+
+  frontend:
+    image: frontend
+    build: ./frontend/
+    container_name: frontend
+    ports: 
+      - 8080:8080
