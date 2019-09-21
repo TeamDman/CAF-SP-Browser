@@ -7,6 +7,6 @@ COPY package-lock.json /app
 RUN npm i
 
 COPY . /app
-EXPOSE 80
 
-CMD ['node','/app/index.js']
+EXPOSE 4000
+CMD ['node','index.js']
