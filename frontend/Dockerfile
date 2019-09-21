@@ -6,7 +6,7 @@ COPY package.json /app
 COPY package-lock.json /app
 RUN npm i
 
-COPY . /app
+COPY --chown=node:node . /app
 
 EXPOSE 8080
-CMD ['npm', 'run', 'serve']
+CMD ["npm", "run", "serve"]
